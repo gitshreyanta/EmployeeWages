@@ -2,4 +2,4 @@
 using EmpolyeeWages;
 Console.WriteLine("Hello, World!");
 Emp1 emp1 = new Emp1();
-emp1.IffElse();
+emp1.Work();
