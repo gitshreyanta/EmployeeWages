@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmpolyeeWages
 {
+    //Declaring Interface 
     public interface IComputeEmpWage
     {
         public void AddCompany(string company, int empRatePerHr, int maxWorkingDays, int maxWorkingHrs);

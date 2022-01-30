@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmpolyeeWages
 {
+    //Inheriting Interface class to Empwage class
     public class Emp1 : IComputeEmpWage
     {
         public const int FULL_TIME = 1;
@@ -16,24 +17,25 @@ namespace EmpolyeeWages
         int empWorkingHrs = 0;
         emppp[] CompanyRecord = new emppp[5];
         public int numOfCompany = 0;
-
+        //Declaring list and dictionary
+        public IList<emppp> CompanyEmpWge = new List<emppp>();
+        public IDictionary<string, emppp> employees = new Dictionary<string, emppp>();
         //method to add company
         public void AddCompany(string company, int empRatePerHr, int maxWorkingDays, int maxWorkingHrs)
         {
             emppp emp = new emppp(company, empRatePerHr, maxWorkingDays, maxWorkingHrs);
-            this.CompanyRecord[this.numOfCompany] = emp;       //storing details in array with respecting index.
-            numOfCompany++;
+            CompanyEmpWge.Add(emp);
+            employees.Add(company, emp);
         }
 
         //method to get wage for each company
         public void GetWage()
         {
-
-            for (int i = 0; i < numOfCompany; i++)
+            foreach (emppp empp in this.CompanyEmpWge)
             {
-                int result = CalWage(this.CompanyRecord[i]);
-                this.CompanyRecord[i].SetTotalWage(result);
+                empp.SetTotalWage(CalWage(empp));
             }
+
         }
         //method to calculate total wage 
         public int CalWage(emppp emp)
