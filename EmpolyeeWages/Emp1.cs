@@ -17,9 +17,17 @@ namespace EmpolyeeWages
         int empWorkingHrs = 0;
         emppp[] CompanyRecord = new emppp[5];
         public int numOfCompany = 0;
+
         //Declaring list and dictionary
-        public IList<emppp> CompanyEmpWge = new List<emppp>();
-        public IDictionary<string, emppp> employees = new Dictionary<string, emppp>();
+        public IList<emppp> CompanyEmpWge;
+        public IDictionary<string, emppp> employees;
+
+        //Constructor to initialise list and dictonary
+        public Emp1()
+        {
+            this.CompanyEmpWge = new List<emppp>();
+            this.employees = new Dictionary<string, emppp>();
+        }
         //method to add company
         public void AddCompany(string company, int empRatePerHr, int maxWorkingDays, int maxWorkingHrs)
         {
