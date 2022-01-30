@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmpolyeeWages
 {
-    public class Emp1
+    public class Emp1 : IComputeEmpWage
     {
         public const int FULL_TIME = 1;
         public const int PART_TIME = 2;
@@ -36,7 +36,7 @@ namespace EmpolyeeWages
             }
         }
         //method to calculate total wage 
-        int CalWage(emppp emp)
+        public int CalWage(emppp emp)
         {
             int totalWage = 0;
             Random random = new Random();
