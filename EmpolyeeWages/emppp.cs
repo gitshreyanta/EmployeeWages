@@ -26,7 +26,7 @@ namespace EmpolyeeWages
             this.maxWorkingHrs = maxWorkingHrs;
 
         }
-        public void SetTotalWage(int totalWagee)
+        public void SetTotalWage(int totalWage)
         {
             this.totalWage = totalWage;
         }
